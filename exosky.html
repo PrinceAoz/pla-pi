@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exoplanet Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d0048; /* Changed body background color */
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .quiz-container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #0d0048; /* Changed quiz container background color */
+            border-radius: 8px;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        button {
+            background-color: #61dafb;
+            color: #282c34;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #21a1f1;
+        }
+        #score {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Exoplanet Quiz</h1>
+        <div id="quiz">
+            <div class="question" id="q1">
+                <p>1. Which was the first exoplanet discovered orbiting a Sun-like star?</p>
+                <button onclick="checkAnswer(this, 1, 'A')">A) Kepler-22b</button>
+                <button onclick="checkAnswer(this, 1, 'B')">B) 51 Pegasi b</button>
+                <button onclick="checkAnswer(this, 1, 'C')">C) Proxima Centauri b</button>
+                <button onclick="checkAnswer(this, 1, 'D')">D) GJ 1214b</button>
+            </div>
+            <div class="question" id="q2">
+                <p>2. What is the main method used to detect exoplanets?</p>
+                <button onclick="checkAnswer(this, 2, 'A')">A) Radial velocity</button>
+                <button onclick="checkAnswer(this, 2, 'B')">B) Transit method</button>
+                <button onclick="checkAnswer(this, 2, 'C')">C) Gravitational microlensing</button>
+                <button onclick="checkAnswer(this, 2, 'D')">D) Direct imaging</button>
+            </div>
+            <div class="question" id="q3">
+                <p>3. What is the habitable zone?</p>
+                <button onclick="checkAnswer(this, 3, 'A')">A) The area between two stars</button>
+                <button onclick="checkAnswer(this, 3, 'B')">B) The region around a star where conditions might be right for life</button>
+                <button onclick="checkAnswer(this, 3, 'C')">C) The region with the most stars</button>
+                <button onclick="checkAnswer(this, 3, 'D')">D) The area of a black hole</button>
+            </div>
+            <div class="question" id="q4">
+                <p>4. Which exoplanet is known for its extreme temperatures and high radiation levels?</p>
+                <button onclick="checkAnswer(this, 4, 'A')">A) GJ 1214b</button>
+                <button onclick="checkAnswer(this, 4, 'B')">B) Proxima Centauri b</button>
+                <button onclick="checkAnswer(this, 4, 'C')">C) HD 189733b</button>
+                <button onclick="checkAnswer(this, 4, 'D')">D) Kepler-22b</button>
+            </div>
+            <div class="question" id="q5">
+                <p>5. What is the name of the first confirmed exoplanet in the habitable zone of its star?</p>
+                <button onclick="checkAnswer(this, 5, 'A')">A) 51 Pegasi b</button>
+                <button onclick="checkAnswer(this, 5, 'B')">B) Kepler-186f</button>
+                <button onclick="checkAnswer(this, 5, 'C')">C) Proxima Centauri b</button>
+                <button onclick="checkAnswer(this, 5, 'D')">D) Kepler-22b</button>
+            </div>
+            <div class="question" id="q6">
+                <p>6. Which exoplanet has an atmosphere containing water vapor and is considered a "super-Earth"?</p>
+                <button onclick="checkAnswer(this, 6, 'A')">A) HD 209458b</button>
+                <button onclick="checkAnswer(this, 6, 'B')">B) GJ 1214b</button>
+                <button onclick="checkAnswer(this, 6, 'C')">C) WASP-121b</button>
+                <button onclick="checkAnswer(this, 6, 'D')">D) LHS 1140 b</button>
+            </div>
+            <div class="question" id="q7">
+                <p>7. What does the term "exoplanet" refer to?</p>
+                <button onclick="checkAnswer(this, 7, 'A')">A) A planet in our solar system</button>
+                <button onclick="checkAnswer(this, 7, 'B')">B) A planet outside our solar system</button>
+                <button onclick="checkAnswer(this, 7, 'C')">C) A moon of a planet</button>
+                <button onclick="checkAnswer(this, 7, 'D')">D) A dwarf planet</button>
+            </div>
+            <div class="question" id="q8">
+                <p>8. How many exoplanets have been confirmed as of 2024?</p>
+                <button onclick="checkAnswer(this, 8, 'A')">A) Over 1,000</button>
+                <button onclick="checkAnswer(this, 8, 'B')">B) Over 5,000</button>
+                <button onclick="checkAnswer(this, 8, 'C')">C) Over 2,000</button>
+                <button onclick="checkAnswer(this, 8, 'D')">D) Over 10,000</button>
+            </div>
+            <div class="question" id="q9">
+                <p>9. What is a "hot Jupiter"?</p>
+                <button onclick="checkAnswer(this, 9, 'A')">A) A gas giant that orbits very close to its star</button>
+                <button onclick="checkAnswer(this, 9, 'B')">B) A planet with strong winds</button>
+                <button onclick="checkAnswer(this, 9, 'C')">C) A planet with a high surface temperature</button>
+                <button onclick="checkAnswer(this, 9, 'D')">D) A terrestrial planet</button>
+            </div>
+            <div class="question" id="q10">
+                <p>10. How far is the closest exoplanet to Earth?</p>
+                <button onclick="checkAnswer(this, 10, 'A')">A) 4.24 light years</button>
+                <button onclick="checkAnswer(this, 10, 'B')">B) 10 light years</button>
+                <button onclick="checkAnswer(this, 10, 'C')">C) 100 light years</button>
+                <button onclick="checkAnswer(this, 10, 'D')">D) 50 light years</button>
+            </div>
+        </div>
+        <div id="score"></div>
+        <button onclick="calculateScore()">Submit Quiz</button>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            1: 'B',
+            2: 'A',
+            3: 'B',
+            4: 'C',
+            5: 'D',
+            6: 'B',
+            7: 'B',
+            8: 'B',
+            9: 'A',
+            10: 'A'
+        };
+
+        let score = 0;
+
+        function checkAnswer(button, questionNumber, selectedAnswer) {
+            const isCorrect = correctAnswers[questionNumber] === selectedAnswer;
+
+            // Color the selected button based on correctness
+            if (isCorrect) {
+                button.style.backgroundColor = 'green'; // Correct answer
+                score++; // Increment score for correct answers
+            } else {
+                button.style.backgroundColor = 'red'; // Wrong answer
+            }
+        }
+
+        function calculateScore() {
+            document.getElementById("score").innerText = `Your score: ${score} out of 10`;
+            // Optionally, reset the quiz
+            // score = 0; 
+            // Reset button colors here if needed
+        }
+    </script>
+</body>
+</html>
